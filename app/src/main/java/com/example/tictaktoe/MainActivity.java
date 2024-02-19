@@ -3,6 +3,8 @@ package com.example.tictaktoe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        init()
+        init();
+
     }
     public void init(){
         btn1=findViewById(R.id.btn1);
@@ -23,5 +26,15 @@ public class MainActivity extends AppCompatActivity {
         btn7=findViewById(R.id.btn7);
         btn8=findViewById(R.id.btn8);
         btn9=findViewById(R.id.btn9);
+    }
+    public void Check(View view){
+        Button btnCurrent = (Button) view;
+        if (flag==0){
+            btnCurrent.setText("X");
+            flag=1;
+        }else {
+            btnCurrent.setText("O");
+            flag=1;
+        }
     }
 }
